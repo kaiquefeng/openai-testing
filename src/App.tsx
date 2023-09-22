@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { OpenAICypress } from "./features/cypress/cypress";
 import { Button } from "./components/button";
+import { Mappging } from "./features/mapping/mapping";
 
 function App() {
   const [response, setResponse] = useState("");
@@ -14,7 +15,8 @@ function App() {
   };
 
   useEffect(() => {
-    requestOpenAi();
+    // requestOpenAi();
+    Mappging();
   }, []);
 
   return (

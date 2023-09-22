@@ -1,7 +1,8 @@
 import { COMMANDS_AI } from "@/constants/commands";
 import { openai } from "../../lib/openai";
+import { OpenAICypressResponse } from "./cypress-generate.types";
 
-export const OpenAICypress = async () => {
+export const OpenAICypress: OpenAICypressResponse = async ({ content }) => {
   return await openai.chat.completions.create({
     model: "gpt-4",
     temperature: 0.6,
@@ -12,7 +13,7 @@ export const OpenAICypress = async () => {
       },
       {
         role: "user",
-        content: ``,
+        content: content,
       },
     ],
     max_tokens: 2048,
