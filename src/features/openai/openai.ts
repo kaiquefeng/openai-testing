@@ -3,11 +3,11 @@ import { OpenAICypress } from "../cypress-generate";
 
 const requestOpenAi = async (content: string) => {
   const response = await OpenAICypress({ content });
-  console.log("REQUEST CHAT", { response });
   return response;
 };
 
 const copyContentFile = (initialPath: string) => {
+  console.log("Generate tests...");
   fs.readFile(initialPath, "utf8", async (err, data) => {
     if (err) {
       console.error("Erro ao ler o arquivo de origem:", err);
