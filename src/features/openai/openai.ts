@@ -16,7 +16,6 @@ const copyContentFile = (initialPath: string) => {
 
     const response = await requestOpenAi(data);
     const codeGenerated = response.choices[0].message.content;
-    console.log({ response: codeGenerated });
 
     fs.writeFile(
       "./cypress/e2e/testing-file.cy.ts",
